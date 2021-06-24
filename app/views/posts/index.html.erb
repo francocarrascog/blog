@@ -1,0 +1,18 @@
+<h1 class="mt-3">Index</h1>
+
+<table class="table">
+    <tr>
+        <th>Título</th>
+        <th>Imagen</th>
+        <th>Contenido</th>
+        <th>Fecha creación</th>
+    </tr>
+    <% @posts.present? && @posts.each do |post| %>
+    <tr>
+        <td><%= post.title %></td>
+        <td><%= image_tag post.image_url, size: '100x100' %></td>
+        <td><%= post.content %></td>
+        <td><%= post.created_at %></td>
+    </tr>
+    <% end %>
+</table>
